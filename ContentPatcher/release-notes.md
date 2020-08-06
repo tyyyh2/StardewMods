@@ -3,6 +3,7 @@
 # Release notes
 ## Upcoming release
 * Added `patch reload` console command (thanks to spacechase0!).
+* Fixed patches not always unapplied when an `Include` patch changes.
 * Fixed error using some tokens within the `contains` input argument.
 * Removed a legacy mod API obsolete since Content Patcher 1.12.
 * Internal changes to prepare for realtime content updates.
