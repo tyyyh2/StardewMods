@@ -85,6 +85,9 @@ namespace ContentPatcher
         /// <summary>Whether the next tick is the first one.</summary>
         private bool IsFirstTick = true;
 
+        /// <summary>The list of raw content packs.</summary>
+        private readonly List<RawContentPack> RawContentPacks = new List<RawContentPack>();
+
 
         /*********
         ** Public methods
@@ -254,7 +257,7 @@ namespace ContentPatcher
             helper.Events.Specialized.LoadStageChanged += this.OnLoadStageChanged;
 
             // set up commands
-            this.CommandHandler = new CommandHandler(this.TokenManager, this.PatchManager, this.Monitor, modID => modID == null ? this.TokenManager : this.TokenManager.GetContextFor(modID), () => this.UpdateContext());
+            this.CommandHandler = new CommandHandler(this.TokenManager, this.PatchManager, this.PatchLoader, this.Monitor, this.RawContentPacks, modID => modID == null ? this.TokenManager : this.TokenManager.GetContextFor(modID), () => this.UpdateContext());
             helper.ConsoleCommands.Add(this.CommandHandler.CommandName, $"Starts a Content Patcher command. Type '{this.CommandHandler.CommandName} help' for details.", (name, args) => this.CommandHandler.Handle(args));
 
             // can no longer queue tokens
@@ -436,6 +439,9 @@ namespace ContentPatcher
 
                     // load patches
                     this.PatchLoader.LoadPatches(current, content.Changes, path, reindex: false, parentPatch: null);
+
+                    // add to content pack list
+                    this.RawContentPacks.Add(current);
                 }
                 catch (Exception ex)
                 {
