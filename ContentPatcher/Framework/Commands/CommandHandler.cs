@@ -600,7 +600,7 @@ namespace ContentPatcher.Framework.Commands
             RawContentPack pack = this.ContentPacks.SingleOrDefault(p => p.Manifest.UniqueID == packId);
             if (pack == null)
             {
-                this.Monitor.Log($"No Content Patcher content pack with the unique ID \"{packId}\".");
+                this.Monitor.Log($"No Content Patcher content pack with the unique ID \"{packId}\".", LogLevel.Error);
                 return true;
             }
 
@@ -617,6 +617,7 @@ namespace ContentPatcher.Framework.Commands
             // make the changes apply
             this.UpdateContext();
 
+            this.Monitor.Log("Content pack reloaded.", LogLevel.Info);
             return true;
         }
 
