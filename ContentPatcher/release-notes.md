@@ -3,6 +3,7 @@
 # Release notes
 ## Upcoming release
 * Removed legacy token API obsolete since Content Patcher 1.12.
+* Internal changes to prepare for realtime content updates.
 
 ## 1.16.1
 Released 03 August 2020.
@@ -20,7 +21,7 @@ Released 02 August 2020. See the [release highlights for mod authors](https://ww
 * Fixed auto-generated patch names not normalising path separators.
 * Fixed `patch summary` showing duplicate target paths in some cases.
 * Fixed string sorting/comparison for some special characters.
-* Internal changes to prepare for upcoming features.
+* Internal changes to prepare for realtime content updates.
 
 **Update note for mod authors:**  
 Using `"Action": "EditData"` with a `FromFile` field is now deprecated, though it still works.
