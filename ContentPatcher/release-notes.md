@@ -2,8 +2,9 @@
 
 # Release notes
 ## Upcoming release
+* Added `patch reload` console command (thanks to spacechase0!).
 * Fixed error using some tokens within the `contains` input argument.
-* Removed legacy token API obsolete since Content Patcher 1.12.
+* Removed a legacy mod API obsolete since Content Patcher 1.12.
 * Internal changes to prepare for realtime content updates.
 
 ## 1.16.1
