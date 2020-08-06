@@ -2,6 +2,7 @@
 
 # Release notes
 ## Upcoming release
+* Fixed error using some tokens within the `contains` input argument.
 * Removed legacy token API obsolete since Content Patcher 1.12.
 * Internal changes to prepare for realtime content updates.
 
