@@ -5,6 +5,7 @@
 * Added [`patch reload`](docs/author-guide.md#patch-reload) console command (thanks to spacechase0!).
 * Fixed patches not always unapplied when an `Include` patch changes.
 * Fixed error using some tokens within the `contains` input argument.
+* Fixed broken error message when multiple load patches apply in 1.16.
 * Removed a legacy mod API obsolete since Content Patcher 1.12.
 * Internal changes to prepare for realtime content updates.
 
